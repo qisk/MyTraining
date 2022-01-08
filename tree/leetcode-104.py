@@ -5,7 +5,7 @@ from base.binaryTree import BinaryTree
 class Solution(object):
     """
     问题：代码在leetcode中返回是正确结果3，但在pyCharm中执行，返回却是4。
-
+    原因分析：binaryTree.initTree中，将list转换为tree的初始化流程不正确，导致结果不一致。
     """
 
     def maxDepth(self, root):

@@ -22,7 +22,8 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    # inputList = [3, 9, 20, None, None, 15, 7]
+    # test1: inputList = [3, 9, 20, None, None, 15, 7]
+    # test2: inputList = [1, None, 2, 3, 4]
     def initTree(self, data):
         def level(index):
             if index >= len(data) or data[index] is None:
