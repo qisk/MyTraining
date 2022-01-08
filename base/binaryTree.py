@@ -22,23 +22,65 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
+    # inputList = [3, 9, 20, None, None, 15, 7]
     def initTree(self, data):
-        self.root = None
-        self.root = self._createTree(self.root, data)
+        def level(index):
+            if index >= len(data) or data[index] is None:
+                return None
 
-    def _createTree(self, root, data):
-        # 创建头结点
-        if len(data) == 0:  # 终止条件：val用完了
+            root = TreeNode(data[index])
+            if index == 0:
+                # 给self.root赋值，保存根节点
+                self.root = root
+            root.left = level(2 * index + 1)
+            root.right = level(2 * index + 2)
             return root
-        if data[0] is not None:  # 本层需要干的就是构建Root、Root.lchild、Root.rchild三个节点。
-            root = TreeNode(data[0])
-            print("%d," % root.val)
-            data.pop(0)
-            root.left = self._createTree(root.left, data)
-            root.right = self._createTree(root.right, data)
-            return root  # 本次递归要返回给上一次的本层构造好的树的根节点
+
+        return level(0)
+
+
+    @staticmethod
+    def printTree_preorder(head):
+        def printNode(node):
+            if node is None:
+                return
+
+            print("%s, %s, %s" % (node.val, node.left, node.right))
+            printNode(node.left)
+            printNode(node.right)
+
+        if head is None:
+            return
         else:
-            root = None
-            print("None,")
-            data.pop(0)
-            return root
+            printNode(head)
+
+    @staticmethod
+    def printTree_inorder(head):
+        def printNode(node):
+            if node is None:
+                return
+
+            printNode(node.left)
+            print("%s, %s, %s" % (node.val, node.left, node.right))
+            printNode(node.right)
+
+        if head is None:
+            return
+        else:
+            printNode(head)
+
+    @staticmethod
+    def printTree_postorder(head):
+        def printNode(node):
+            if node is None:
+                return
+
+            printNode(node.left)
+            printNode(node.right)
+            print("%s, %s, %s" % (node.val, node.left, node.right))
+
+        if head is None:
+            return
+        else:
+            printNode(head)
+
