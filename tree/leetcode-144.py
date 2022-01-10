@@ -1,5 +1,5 @@
 # Press the green button in the gutter to run the script.
-from base.binaryTree import BinaryTree
+from base.binaryTree import BinaryTreeForOneChild
 
 
 class Solution(object):
@@ -25,11 +25,13 @@ class Solution(object):
 if __name__ == '__main__':
     instance = Solution()
 
-    inputList = [1, None, 2, 3, 4]
-    tree_instance = BinaryTree()
+    inputList = [1, None, 2, 3]
+    tree_instance = BinaryTreeForOneChild()
     tree_instance.initTree(inputList)
     print('tree root:', tree_instance.root.val)
-    BinaryTree.printTree_preorder(tree_instance.root)
+    BinaryTreeForOneChild.printTree_preorder(tree_instance.root)
+    print('************************************')
 
+    # 返回前序遍历
     result = instance.preorderTraversal(tree_instance.root)
-    print('result=%s'%result)
+    print('result=%s' % result)

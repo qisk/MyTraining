@@ -1,4 +1,4 @@
-from base.linkedList import LinkedList
+from base.linkedList import SingleLinkedList
 
 
 class Solution(object):
@@ -30,7 +30,7 @@ if __name__ == '__main__':
     instance = Solution()
 
     # 初始化链表
-    linkedList_instance = LinkedList()
+    linkedList_instance = SingleLinkedList()
     linkedList_instance.initList([1, 2, 3, 4, 5])
 
     # 反转链表
@@ -38,4 +38,4 @@ if __name__ == '__main__':
 
     # 重新设置链表头节点，并打印整个链表
     linkedList_instance.setHead(new_head)
-    LinkedList.printList(linkedList_instance.head)
+    SingleLinkedList.printList(linkedList_instance.head)

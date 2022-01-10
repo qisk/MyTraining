@@ -1,5 +1,5 @@
 # Press the green button in the gutter to run the script.
-from base.binaryTree import BinaryTree
+from base.binaryTree import BinaryTreeForTwoChild
 
 
 class Solution(object):
@@ -36,16 +36,12 @@ if __name__ == '__main__':
 
     # 构建一棵树
     inputList = [3, 9, 20, None, None, 15, 7]
-    tree_instance = BinaryTree()
+    tree_instance = BinaryTreeForTwoChild()
     tree_instance.initTree(inputList)
     print('tree root:', tree_instance.root.val)
-    BinaryTree.printTree_preorder(tree_instance.root)
+    BinaryTreeForTwoChild.printTree_preorder(tree_instance.root)
     print('************************************')
-    BinaryTree.printTree_inorder(tree_instance.root)
-    print('************************************')
-    BinaryTree.printTree_postorder(tree_instance.root)
 
-    print('####################################')
     # 返回最长路径
     result = instance.maxDepth(tree_instance.root)
     print('result=%s' % result)

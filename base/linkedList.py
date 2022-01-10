@@ -5,7 +5,7 @@ class ListNode(object):
         self.next = next
 
 
-class LinkedList:
+class SingleLinkedList:
     def __init__(self):
         self.head = None
 
